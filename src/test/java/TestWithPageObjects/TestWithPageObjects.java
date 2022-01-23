@@ -1,4 +1,4 @@
-import static com.codeborne.selenide.Selenide.sleep;
+package TestWithPageObjects;
 
 public class TestWithPageObjects {
     public static void main (String[] args) {

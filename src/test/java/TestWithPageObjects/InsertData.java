@@ -1,10 +1,11 @@
+package TestWithPageObjects;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 
 import java.io.File;
 
 import static com.codeborne.selenide.CollectionCondition.containExactTextsCaseSensitive;
-import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.String.format;
@@ -29,13 +30,14 @@ public class InsertData {
 
 
 
-
+    // запускаем браузер с необходимым разрешением на необходимую страницу
     public InsertData openBrowser () {
         Configuration.browserSize = "1920x1040";
         open("https://demoqa.com/automation-practice-form");
         return this;
     }
 
+    // назначаем всезначения для всех ячеек
     public InsertData setAllData (String fName, String lName, String Email,String Gender, String Number, String Address,
                                   String DayOfBirth, String MonthOfBirth, String YearOfBirth, String Subject,
                                   String Hobbies, String State, String City, String Pic) {
@@ -55,16 +57,16 @@ public class InsertData {
         stateField.setValue(State).pressEnter();
         cityField.setValue(City).pressEnter();
         pictureField.uploadFile(new File("src/test/resources/" + Pic));
-//        $("#uploadPicture").uploadFile(new File("src/test/resources/1.img"));
         return this;
     }
 
-
+    // подтверждение выбранных значений
     public InsertData submit () {
         $("#submit").scrollTo().click();
         return this;
     }
 
+    // проверка правильного расположения выбранных значений
     public  InsertData validation (String fName, String lName, String Email,String Gender, String Number, String Address,
                              String DayOfBirth, String MonthOfBirth, String YearOfBirth, String Subject,
                              String Hobbies, String State, String City, String Pic) {
