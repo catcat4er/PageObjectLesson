@@ -37,7 +37,7 @@ public class InsertData {
         return this;
     }
 
-    // назначаем всезначения для всех ячеек
+    // назначаем все значения для всех ячеек
     public InsertData setAllData (String fName, String lName, String Email,String Gender, String Number, String Address,
                                   String DayOfBirth, String MonthOfBirth, String YearOfBirth, String Subject,
                                   String Hobbies, String State, String City, String Pic) {
